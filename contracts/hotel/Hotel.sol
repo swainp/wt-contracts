@@ -24,7 +24,14 @@ contract Hotel is AbstractHotel {
     manager = _manager;
     index = _index;
     dataUri = _dataUri;
+    partnerHotels = new address[](5);
     created = block.number;
+  }
+
+  function addPartnerHotel (address _partnerHotel) external {
+    require(_partnerHotel != address(0));
+    //TODO: Add code to add the new partnerHotel to the contract
+    //Note ... how do we determine how many spaces of our 5 are used?
   }
 
   function _editInfoImpl(string _dataUri) internal {
