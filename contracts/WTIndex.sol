@@ -4,13 +4,13 @@ import "./AbstractWTIndex.sol";
 import "./hotel/Hotel.sol";
 
 /**
- * @title WIPUIndex, registry of all hotels registered on WT
+ * @title WTIndex, registry of all hotels registered on WT
  * @dev The hotels are stored in an array and can be filtered by the owner
  * address. Inherits from OpenZeppelin's `Ownable` and `AbstractBaseContract`.
  */
-contract WIPUIndex is AbstractWIPUIndex {
+contract WTIndex is AbstractWTIndex {
 
-  bytes32 public contractType = bytes32("wipuindex");
+  bytes32 public contractType = bytes32("wtindex");
 
   // Array of addresses of `Hotel` contracts
   address[] public hotels;
