@@ -1,7 +1,7 @@
 {
-  "name": "@windingtree/wt-contracts",
+  "name": "@windingtree/wupi-contracts",
   "version": "0.2.4",
-  "description": "Smart contracts of the Winding Tree platform",
+  "description": "The WUPI Version of contracts on the Winding Tree platform",
   "directories": {
     "test": "test"
   },
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/windingtree/wt-contracts"
+    "url": "https://github.com/swainp/wt-contracts"
   },
   "keywords": [
     "winding-tree",
@@ -31,7 +31,7 @@
     "smart-contracts"
   ],
   "main": "index.js",
-  "author": "Winding Tree Developers <dev@windingtree.com>",
+  "author": "The WUPI Team @ Winding Tree Developers <dev@windingtree.com>",
   "license": "GPL-3.0-only",
   "dependencies": {
     "abi-decoder": "^1.1.0",
