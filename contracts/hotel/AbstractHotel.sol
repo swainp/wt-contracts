@@ -22,6 +22,8 @@ contract AbstractHotel is AbstractBaseContract {
   // WTIndex address
   address public index;
 
+  address[] public partnerHotels;
+
   /**
    * Allows calling such methods only when msg.sender is equal
    * to previously set index propert.y
