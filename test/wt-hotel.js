@@ -126,4 +126,21 @@ contract('Hotel', (accounts) => {
       assert(await wtHotel.manager(), nonOwnerAccount);
     });
   });
+
+  describe('check if partner address can be written', () => {
+    it('should return 0', async () => {
+      const info = await wtHotel.contract._checkIfAddressCanBeWrittenToPartnerHotel(hotelAddress);
+      assert.equal(info, 0);
+    });
+  });
+
+  describe('check if partner address can be written', () => {
+    it('should return the same address it was sent', async () => {
+      const info = await wtHotel.contract.addPartnerHotel(hotelAddress, { from: accounts[0] });
+      const savedAddress = await wtHotel.contract.partnerHotels(0);
+      console.log(JSON.stringify(info));
+      assert(info.length > 0);
+      assert.equal(savedAddress,hotelAddress);
+    });
+  });
 });

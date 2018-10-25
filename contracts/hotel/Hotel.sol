@@ -28,16 +28,18 @@ contract Hotel is AbstractHotel {
     created = block.number;
   }
 
-  function addPartnerHotel (address _partnerHotel) onlyFromIndex external {
+  function addPartnerHotel (address _partnerHotel) external returns (bool) {
     int firstEmptySlot = _checkIfAddressCanBeWrittenToPartnerHotel (_partnerHotel);
     require (firstEmptySlot != -1);
 
     partnerHotels[uint(firstEmptySlot)] = _partnerHotel;
+
+    return true;
   }
 
   // sense check master function
   // note this uses an int as we want the position later on in the code ... -1 = "false" ... 0 and up = the first empty space
-  function _checkIfAddressCanBeWrittenToPartnerHotel (address _partnerHotel) view internal returns (int) {
+  function _checkIfAddressCanBeWrittenToPartnerHotel (address _partnerHotel) view public returns (int) {
     require(_partnerHotel != address(0));
     require(_checkPartnerHotelIsPresent(_partnerHotel) == false);
 
@@ -49,7 +51,7 @@ contract Hotel is AbstractHotel {
 
   // checking there is 1 free space on our array to add our partner hotel
   // note this uses an int as we want the position later on in the code ... -1 = "false" ... 0 and up = the first empty space
-  function _checkPartnerHotelsAreEmpty () view internal returns (int) {
+  function _checkPartnerHotelsAreEmpty () view public returns (int) {
 
     //Check to see if we have a free item in our array
     uint itemsInPartnerHotel = 5;
@@ -64,7 +66,7 @@ contract Hotel is AbstractHotel {
   }
 
   // sense check to see if the partner hotel we want to add is already there
-  function _checkPartnerHotelIsPresent (address _partnerHotel) view internal returns (bool) {
+  function _checkPartnerHotelIsPresent (address _partnerHotel) view public returns (bool) {
 
     uint itemsInPartnerHotel = 5;
 
