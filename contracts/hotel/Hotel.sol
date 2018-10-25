@@ -15,7 +15,7 @@ contract Hotel is AbstractHotel {
    * @dev Constructor.
    * @param _manager address of hotel owner
    * @param _dataUri pointer to hotel data
-   * @param _index originating WIPUIndex address
+   * @param _index originating WTIndex address
    */
   constructor(address _manager, string _dataUri, address _index) public {
     require(_manager != address(0));
