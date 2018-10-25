@@ -18,3 +18,4 @@ allFiredEvents
 
 # ETH keys
 keys.json
+.DS_Store
